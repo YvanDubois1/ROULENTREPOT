@@ -63,28 +63,29 @@
 
   <section id="reserver" class="container">
     <h2 class="section-title">Réserver une remorque</h2>
-    <form>
-      <div class="mb-3">
-        <label for="modele" class="form-label">Modèle de remorque</label>
-        <select class="form-select" id="modele">
-          <option>6x12</option>
-          <option>7x14</option>
-        </select>
-      </div>
-      <div class="mb-3">
-        <label for="dates" class="form-label">Dates de location</label>
-        <input type="text" class="form-control" id="dates" placeholder="Ex : 1 au 7 août">
-      </div>
-      <div class="mb-3">
-        <label for="adresse" class="form-label">Adresse de livraison</label>
-        <input type="text" class="form-control" id="adresse">
-      </div>
-      <div class="mb-3">
-        <label for="contact" class="form-label">Vos coordonnées</label>
-        <input type="text" class="form-control" id="contact" placeholder="Nom, téléphone ou courriel">
-      </div>
-      <button type="submit" class="btn btn-primary">Envoyer la demande</button>
-    </form>
+<form action="https://formspree.io/f/mkgzjgdj" method="POST" class="space-y-4">
+    <input type="hidden" name="_subject" value="Nouvelle réservation remorque">
+    <input type="hidden" name="_next" value="https://votre-site.com/merci.html">
+
+    <div>
+        <label for="nom">Nom complet</label>
+        <input type="text" name="nom" required class="mt-1 block w-full" />
+    </div>
+    <div>
+        <label for="email">Adresse courriel</label>
+        <input type="email" name="email" required class="mt-1 block w-full" />
+    </div>
+    <div>
+        <label for="date">Date de réservation</label>
+        <input type="date" name="date" required class="mt-1 block w-full" />
+    </div>
+    <div>
+        <label for="duree">Durée (jours)</label>
+        <input type="number" name="duree" required min="1" class="mt-1 block w-full" />
+    </div>
+
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Réserver</button>
+</form>
   </section>
 
   <section id="contact" class="container">
